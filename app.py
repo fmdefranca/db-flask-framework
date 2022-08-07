@@ -2,7 +2,6 @@ from flask import Flask, render_template, flash, request
 from flask_assets import Bundle, Environment
 
 # database imports
-import pyodbc
 
 # create app
 app = Flask(__name__)
@@ -42,42 +41,42 @@ def index():
 def sfdc():
     return render_template("sfdc.html")
 
-@app.route("/supplypro", methods=['GET', 'POST'])
-def supplyPro():
+# @app.route("/supplypro", methods=['GET', 'POST'])
+# def supplyPro():
     
-    conn = pyodbc.connect("DRIVER={SQL Server};SERVER=austin\\exelefacs;DATABASE=supplypro2;UID=supplypro2;PWD=sp2")
-    cursor = conn.cursor()
-    cursor.execute("show ''")
-    fetchData = cursor.fetchall()
-    if request.method == 'POST':
-        if request.form['submit'] == 'searchBtn':
-            cursor.execute(f"show '{request.form.get('partnumber')}'")
-            fetchData = cursor.fetchall()
-            return render_template("supplypro.html", fetchData=fetchData)
-            conn.close()
-        elif request.form['submit'] == 'takeBtn':
-            print(f'take button pressed')
-        elif request.form['submit'] == 'addBtn':
-            print(f'add button pressed')
-        # partNumber = request.form.get('partnumber')
-        # idbadge = request.form.get('idbadge')
-        # quantity = request.form.get('quantity')
-    conn.close()
-    return render_template("supplypro.html", fetchData=fetchData)
-    #flash("this is a flashed message.", "success")
+#     conn = pyodbc.connect("DRIVER={SQL Server};SERVER=austin\\exelefacs;DATABASE=supplypro2;UID=supplypro2;PWD=sp2")
+#     cursor = conn.cursor()
+#     cursor.execute("show ''")
+#     fetchData = cursor.fetchall()
+#     if request.method == 'POST':
+#         if request.form['submit'] == 'searchBtn':
+#             cursor.execute(f"show '{request.form.get('partnumber')}'")
+#             fetchData = cursor.fetchall()
+#             return render_template("supplypro.html", fetchData=fetchData)
+#             conn.close()
+#         elif request.form['submit'] == 'takeBtn':
+#             print(f'take button pressed')
+#         elif request.form['submit'] == 'addBtn':
+#             print(f'add button pressed')
+#         # partNumber = request.form.get('partnumber')
+#         # idbadge = request.form.get('idbadge')
+#         # quantity = request.form.get('quantity')
+#     conn.close()
+#     return render_template("supplypro.html", fetchData=fetchData)
+#     #flash("this is a flashed message.", "success")
 
-@app.route("/datamatrix", methods=['GET', 'POST'])
-def dataMatrixChecker():
-    conn = pyodbc.connect("DRIVER={SQL Server};SERVER=austin\\exelefacs;DATABASE=efacdb;UID=efacs;PWD=FSbtgDubu4A6")
-    cursor = conn.cursor()
-    if request.method == 'POST':
-        if request.form['submit'] == 'validateBtn':
-            cursor.execute(f"exec dbo.mo_laserQR '{request.form.get('fixtureQrCode')}'")
-            fetchData = cursor.fetchall()
-            print(fetchData)
-            return render_template("datamatrix.html", fetchData=fetchData)
+# @app.route("/datamatrix", methods=['GET', 'POST'])
+# def dataMatrixChecker():
+#     conn = pyodbc.connect("DRIVER={SQL Server};SERVER=austin\\exelefacs;DATABASE=efacdb;UID=efacs;PWD=FSbtgDubu4A6")
+#     cursor = conn.cursor()
+#     if request.method == 'POST':
+#         if request.form['submit'] == 'validateBtn':
+#             cursor.execute(f"exec dbo.mo_laserQR '{request.form.get('fixtureQrCode')}'")
+#             fetchData = cursor.fetchall()
+#             print(fetchData)
+#             return render_template("datamatrix.html", fetchData=fetchData)
 
-    return render_template("datamatrix.html")
+#     return render_template("datamatrix.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
