@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<main class="mt-5 pt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 fw-bold fs-3">
+                SFDC
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="exampleFormControlInput1" class="form-label">ID Badge</label>
+                <input class="form-control" type="text" placeholder="" aria-label="default input example">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="exampleFormControlInput1" class="form-label">WO Operation</label>
+                <input class="form-control" type="text" placeholder="" aria-label="default input example">
+            </div>
+            <div class="mb-3 col-md-12">
+                <button type="button" class="btn btn-success">Start OP</button>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="exampleFormControlInput1" class="form-label">Quantity of Goods</label>
+                <input class="form-control" type="text" placeholder="" aria-label="default input example">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="exampleFormControlInput1" class="form-label">Quantity to Scrap</label>
+                <input class="form-control" type="text" placeholder="" aria-label="default input example">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="exampleFormControlInput1" class="form-label">Scrap Code</label>
+                <input class="form-control" type="text" placeholder="" aria-label="default input example">
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="exampleFormControlInput1" class="form-label">Total Hours</label>
+                <input class="form-control" type="text" placeholder="" aria-label="default input example">
+            </div>
+            <div class="mb-3 col-md-6">
+                <button type="button" class="btn btn-danger">Complete OP</button>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            SFDC Data Table
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Part Number</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+{% endblock %}

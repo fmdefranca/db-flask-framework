@@ -8,6 +8,7 @@ flask = "*"
 flask-assets = "*"
 jsmin = "*"
 libsass = "*"
+pyodbc = "*"
 
 [dev-packages]
 

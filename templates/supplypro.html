@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<main class="mt-5 pt-3">
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert" id="alertMessage">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 fw-bold fs-3">
+                Supply Pro
+            </div>
+            <form action="{{ url_for('supplyPro') }}" method="POST">
+                
+                <div class="mb-3 col-md-3">
+                    <label for="exampleFormControlInput1" class="form-label">Scan or Type your Badge Number</label>
+                    <input name="idbadge" class="form-control" type="text" placeholder="" aria-label="default input example">
+                </div>
+                <div class="mb-3 col-md-3">
+                    <label for="exampleFormControlInput1" class="form-label">Scan or Type Part Number</label>
+                    <input name="partnumber" class="form-control" type="text" placeholder="" aria-label="default input example">
+                </div>
+                <div class="mb-3 col-md-3">
+                    <label for="exampleFormControlInput1" class="form-label">Quantity</label>
+                    <input name="quantity" class="form-control" type="text" placeholder="" aria-label="default input example">
+                </div>
+                <div class="mb-3 col-md-12">
+                    <button type="submit" name="submit" value="searchBtn" class="btn btn-secondary">Search</button>
+                    <button type="submit" name="submit" value="takeBtn" class="btn btn-secondary">Take</button>
+                    <button type="submit" name="submit" value="addBtn" class="btn btn-secondary">Add</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Supply Pro Data Table
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Part Number</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for data in fetchData %}
+                                <tr>
+                                    <th scope="row">{{ data[0] }}</th>
+                                    <td>{{ data[1] }}</td>
+                                    <td>{{ data[2] }}</td>
+                                    <td>{{ data[3] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

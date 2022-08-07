@@ -2,24 +2,91 @@
 
 {% block body %}
 
-<div class="container mt-5">
-    <h1>A Flask application with Bootstrap Sass</h1>
-
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat nisi, blandit quis dignissim ac, egestas nec
-        justo. Ut ut metus vel dolor tristique porta vitae nec ex. Morbi vel suscipit sapien. Fusce semper purus quis
-        sapien ullamcorper laoreet. Nunc non turpis non urna vestibulum aliquet non nec nulla. Proin at mi sem. Cras
-        consectetur elementum ipsum et tincidunt. Nunc vestibulum nunc id dui lobortis fermentum. Donec varius, erat ac
-        condimentum hendrerit, velit felis consequat ligula, id fermentum ligula enim id turpis.
-    </p>
-
-    <p>
-        Nulla tempus dictum nulla vel posuere. In quam massa, venenatis vitae ante at, congue aliquet tellus. Sed
-        ultricies sit amet odio vel porttitor. Vivamus pharetra ultricies enim, auctor gravida mauris interdum nec.
-        Aliquam ut iaculis tortor. Nullam id fringilla orci. Nulla efficitur, nisl non interdum vestibulum, ex purus
-        egestas quam, quis accumsan nisl justo a justo. Aliquam sodales euismod tortor, vitae porttitor tortor molestie
-        eget. Nam nisi odio, viverra sed odio id, tincidunt rutrum dolor. Nullam at maximus odio.
-    </p>
-</div>
-
+<main class="mt-5 pt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 fw-bold fs-3">
+                Dashboard
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="card text-white bg-primary h-100">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-white bg-success h-100">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-white bg-warning h-100">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card text-white bg-danger h-100">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Data Table
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}
